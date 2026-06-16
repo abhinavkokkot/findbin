@@ -5,6 +5,9 @@
 const SUPABASE_URL = "https://lwqtexufasfycscwzfqd.supabase.co"; 
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3cXRleHVmYXNmeWNzY3d6ZnFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE2MTMxNDYsImV4cCI6MjA5NzE4OTE0Nn0.aGDIvn5CHlgeD9_rQkvAl4VKe_tTvqK4VOeDyX_HZEg";
 
+// =========================================================================
+// 1. DATABASE CONFIGURATION
+// =========================================================================
 
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -90,8 +93,15 @@ async function loadPinsFromDatabase() {
 }
 
 // =========================================================================
-// 5. FILTER TOGGLE CHECKBOX LOGIC
+// 5. TOP-CENTER FILTER TOGGLE LOGIC
 // =========================================================================
+const filterMainBtn = document.getElementById('filter-main-btn');
+const filterDropdown = document.getElementById('filter-dropdown');
+
+filterMainBtn.addEventListener('click', () => {
+    filterDropdown.classList.toggle('hidden');
+});
+
 const filters = {
     toilet: document.getElementById('filter-toilet'),
     dustbin: document.getElementById('filter-dustbin'),
@@ -112,6 +122,13 @@ function filterMarkersVisible() {
         }
     });
 }
+
+// Close filter menu when clicking outside of it
+document.addEventListener('click', (e) => {
+    if (!filterMainBtn.contains(e.target) && !filterDropdown.contains(e.target)) {
+        filterDropdown.classList.add('hidden');
+    }
+});
 
 // =========================================================================
 // 6. DROPDOWN UTILITY PLACEMENT PATTERNS (WRITING TO 'BIN')
