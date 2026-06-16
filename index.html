@@ -11,11 +11,13 @@
 </head>
 <body>
 
-    <div id="filter-panel">
-        <h3>Show on Map:</h3>
-        <label><input type="checkbox" id="filter-toilet" checked> 🚻 Toilets</label>
-        <label><input type="checkbox" id="filter-dustbin" checked> 🗑️ Dustbins</label>
-        <label><input type="checkbox" id="filter-autostand" checked> 🛺 Auto Stands</label>
+    <div id="filter-container">
+        <button id="filter-main-btn" title="Toggle Filters">👁️ Show on Map</button>
+        <div id="filter-dropdown" class="hidden">
+            <label><input type="checkbox" id="filter-toilet" checked> 🚻 Toilets</label>
+            <label><input type="checkbox" id="filter-dustbin" checked> 🗑️ Dustbins</label>
+            <label><input type="checkbox" id="filter-autostand" checked> 🛺 Auto Stands</label>
+        </div>
     </div>
 
     <div id="add-container">
