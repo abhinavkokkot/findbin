@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Top-Left Side Filter Panel */
+#filter-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#filter-panel h3 { 
+    margin: 0 0 5px 0; 
+    font-size: 14px; 
+    color: #333; 
+}
+
+#filter-panel label { 
+    font-size: 14px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+/* Add Button & Dropdown Container (Top-Right) */
+#add-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+#add-main-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #28a745;
+    color: white;
+    border: none;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-main-btn.active { 
+    background: #dc3545; 
+    transform: rotate(45deg); 
+}
+
+#add-dropdown {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hidden { 
+    display: none !important; 
+}
+
+.add-type-btn {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    text-align: left;
+    width: 150px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.add-type-btn:hover { 
+    background: #f0f0f0; 
+}
+
+/* Floating Recenter Button (Bottom-Right) */
+#recenter-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+}
+
+#recenter-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+#recenter-btn:active {
+    transform: scale(0.95);
+}
+
+/* Map Emoji Icons custom styling class */
+.custom-emoji-icon {
+    font-size: 24px;
+    text-align: center;
+    line-height: 24px;
+}

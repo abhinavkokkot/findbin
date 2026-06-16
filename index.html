@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Utility Map</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="filter-panel">
+        <h3>Show on Map:</h3>
+        <label><input type="checkbox" id="filter-toilet" checked> 🚻 Toilets</label>
+        <label><input type="checkbox" id="filter-dustbin" checked> 🗑️ Dustbins</label>
+        <label><input type="checkbox" id="filter-autostand" checked> 🛺 Auto Stands</label>
+    </div>
+
+    <div id="add-container">
+        <button id="add-main-btn" title="Add New Item">+</button>
+        <div id="add-dropdown" class="hidden">
+            <button class="add-type-btn" data-type="toilet">🚻 Add Toilet</button>
+            <button class="add-type-btn" data-type="dustbin">🗑️ Add Dustbin</button>
+            <button class="add-type-btn" data-type="autostand">🛺 Add Auto Stand</button>
+        </div>
+    </div>
+
+    <button id="recenter-btn" title="Find My Location">🎯</button>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
