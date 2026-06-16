@@ -11,33 +11,57 @@ body, html {
     z-index: 1;
 }
 
-/* Top-Left Side Filter Panel */
-#filter-panel {
+/* Common Dropdown Container Styles */
+.hidden { 
+    display: none !important; 
+}
+
+/* Top-Center Filter Panel Dropdown Setup */
+#filter-container {
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+#filter-main-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: background 0.2s;
+}
+
+#filter-main-btn:hover {
+    background: #f0f0f0;
+}
+
+#filter-dropdown {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    min-width: 140px;
 }
 
-#filter-panel h3 { 
-    margin: 0 0 5px 0; 
-    font-size: 14px; 
-    color: #333; 
-}
-
-#filter-panel label { 
+#filter-dropdown label { 
     font-size: 14px; 
     cursor: pointer; 
     display: flex; 
     align-items: center; 
-    gap: 8px; 
+    gap: 10px; 
 }
 
 /* Add Button & Dropdown Container (Top-Right) */
@@ -82,10 +106,6 @@ body, html {
     display: flex;
     flex-direction: column;
     gap: 4px;
-}
-
-.hidden { 
-    display: none !important; 
 }
 
 .add-type-btn {
